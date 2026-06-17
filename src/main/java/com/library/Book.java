@@ -1,6 +1,10 @@
 package com.library;
 
+import java.util.logging.Logger;
+
 public class Book {
+
+    private static final Logger LOGGER = Logger.getLogger(Book.class.getName());
 
     // Private member variables to store the book's title, author, and borrowed status.
     private String title;
@@ -19,9 +23,9 @@ public class Book {
         // To check if the book is not already borrowed.
         if (!isBorrowed) {
             isBorrowed = true;
-            System.out.println("Book is successfully borrowed: " + title);
+            LOGGER.info(() -> "Book is successfully borrowed: " + title);
         } else {
-            System.out.println("Sorry, this book is already borrowed");
+            LOGGER.info("Sorry, this book is already borrowed");
         }
     }
 
@@ -30,10 +34,10 @@ public class Book {
         // To check if the book is already borrowed.
         if (isBorrowed) {
             isBorrowed = false;
-            System.out.println("You've successfully returned the book: " + title);
+            LOGGER.info(() -> "You've successfully returned the book: " + title);
         } else {
             // If the book wasn't borrowed, display a message.
-            System.out.println("This book wasn't borrowed");
+            LOGGER.info("This book wasn't borrowed");
         }
     }
 
@@ -59,6 +63,6 @@ public class Book {
 
     // Method to display the book's details.
     public void displayDetails() {
-        System.out.println("Title: " + title + ", Author: " + author);
+        LOGGER.info(() -> "Title: " + title + ", Author: " + author);
     }
 }
