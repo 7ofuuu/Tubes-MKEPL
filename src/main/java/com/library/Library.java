@@ -2,8 +2,12 @@ package com.library;
 
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class Library{
+    private static final Logger LOGGER = Logger.getLogger(Library.class.getName());
+    private static final String BY = " by ";
+
     // Private member variable to store a list of the books in the Library.
     private ArrayList<Book> books;
 
@@ -25,7 +29,7 @@ public class Library{
             // Checking the availability of the book.
             if(book.isAvailable()){
                 // Display the title and author of the available books.
-                System.out.println(book.getTitle() + " by " + book.getAuthor());
+                LOGGER.info(book.getTitle() + BY + book.getAuthor());
             }
         }
     }
@@ -39,15 +43,15 @@ public class Library{
                 if(book.isAvailable()){
                     // If the book is available, borrow it.
                     book.borrowBook();
-                    System.out.println("You have successfully borrowed '" + title + "' by " + author + ".");
+                    LOGGER.info("You have successfully borrowed '" + title + "'" + BY + author + ".");
                 }  else {
-                    System.out.println("Sorry, '" + title + "' by " + author + " is already borrowed.");
+                    LOGGER.info("Sorry, '" + title + "'" + BY + author + " is already borrowed.");
                 }
                 return; // Exit the method after borrowing.
             }
-        } 
+        }
           // If the book is not found or available display a message.
-          System.out.println("Sorry, the book is not available!");
+          LOGGER.info("Sorry, the book is not available!");
     }
     
     // Method to return a book.
@@ -59,13 +63,13 @@ public class Library{
                 // If the book is borrowed, return it.
                 if (!book.isAvailable()) {
                     book.returnBook();  // Mark the book as returned
-                    System.out.println("You have successfully returned '" + title + "' by " + author + ".");
-                } 
+                    LOGGER.info("You have successfully returned '" + title + "'" + BY + author + ".");
+                }
                 return; // Exit the method after returning.
             }
          }
          // If the book was not found pr wasn't borrowed, display a message.
-         System.out.println("This book wasn't borrowed from the Library!");
+         LOGGER.info("This book wasn't borrowed from the Library!");
      }
     
 }
