@@ -2,9 +2,9 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "main", "dev", "dev_*" ]
   pull_request:
-    branches: [ "dev" ]
+    branches: [ "main", "dev", "dev_*" ]
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
         cache: 'maven'
         
     - name: Run Build and Logic Tests with Maven
-      run: mvn clean test-compile
+      run: mvn clean test
 
     - name: Run Snyk Security Scan
       if: matrix.os == 'ubuntu-latest'

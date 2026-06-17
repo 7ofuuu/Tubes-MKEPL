@@ -1,19 +1,38 @@
 package com.library;
 
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 public class LibraryTest {
-    public static void main(String[] args) {
-        System.out.println("Memulai Automasi Pengujian Java Assertion...");
-        testAddBook();
-        
+
+    @Test
+    public void testAddBook() {
+        Book book = new Book("Verity", "Colleen Hoover");
+        assertEquals("Verity", book.getTitle());
+        assertEquals("Colleen Hoover", book.getAuthor());
     }
 
-    public static void testAddBook() {
-        Library library = new Library();
-        Book book = new Book("Verity", "Colleen Hoover");
-        library.addBook(book);
-        boolean statusBuku = book.isAvailable();
-        assert book != null : "ERROR: Objek buku gagal dibuat!";
-        assert book.getTitle().equals("Verity") : "ERROR: Judul buku tidak cocok!";
-        System.out.println("[PASSED] testAddBook");
+    @Test
+    public void testNewBookIsAvailable() {
+        Book book = new Book("Grit", "Angela Duckworth");
+        assertTrue(book.isAvailable());
+        assertFalse(book.isBorrowed());
+    }
+
+    @Test
+    public void testBorrowBook() {
+        Book book = new Book("The Secret", "Rhonda Byrne");
+        book.borrowBook();
+        assertTrue(book.isBorrowed());
+        assertFalse(book.isAvailable());
+    }
+
+    @Test
+    public void testReturnBook() {
+        Book book = new Book("The Secret", "Rhonda Byrne");
+        book.borrowBook();
+        book.returnBook();
+        assertFalse(book.isBorrowed());
+        assertTrue(book.isAvailable());
     }
 }
