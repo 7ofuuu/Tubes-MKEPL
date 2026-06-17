@@ -23,7 +23,7 @@ public class Book {
         // To check if the book is not already borrowed.
         if (!isBorrowed) {
             isBorrowed = true;
-            LOGGER.info("Book is successfully borrowed: " + title);
+            LOGGER.info(() -> "Book is successfully borrowed: " + title);
         } else {
             LOGGER.info("Sorry, this book is already borrowed");
         }
@@ -34,7 +34,7 @@ public class Book {
         // To check if the book is already borrowed.
         if (isBorrowed) {
             isBorrowed = false;
-            LOGGER.info("You've successfully returned the book: " + title);
+            LOGGER.info(() -> "You've successfully returned the book: " + title);
         } else {
             // If the book wasn't borrowed, display a message.
             LOGGER.info("This book wasn't borrowed");
@@ -63,6 +63,6 @@ public class Book {
 
     // Method to display the book's details.
     public void displayDetails() {
-        LOGGER.info("Title: " + title + ", Author: " + author);
+        LOGGER.info(() -> "Title: " + title + ", Author: " + author);
     }
 }

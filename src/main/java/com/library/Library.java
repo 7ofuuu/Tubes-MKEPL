@@ -29,7 +29,7 @@ public class Library{
             // Checking the availability of the book.
             if(book.isAvailable()){
                 // Display the title and author of the available books.
-                LOGGER.info(book.getTitle() + BY + book.getAuthor());
+                LOGGER.info(() -> book.getTitle() + BY + book.getAuthor());
             }
         }
     }
@@ -43,9 +43,9 @@ public class Library{
                 if(book.isAvailable()){
                     // If the book is available, borrow it.
                     book.borrowBook();
-                    LOGGER.info("You have successfully borrowed '" + title + "'" + BY + author + ".");
+                    LOGGER.info(() -> "You have successfully borrowed '" + title + "'" + BY + author + ".");
                 }  else {
-                    LOGGER.info("Sorry, '" + title + "'" + BY + author + " is already borrowed.");
+                    LOGGER.info(() -> "Sorry, '" + title + "'" + BY + author + " is already borrowed.");
                 }
                 return; // Exit the method after borrowing.
             }
@@ -63,7 +63,7 @@ public class Library{
                 // If the book is borrowed, return it.
                 if (!book.isAvailable()) {
                     book.returnBook();  // Mark the book as returned
-                    LOGGER.info("You have successfully returned '" + title + "'" + BY + author + ".");
+                    LOGGER.info(() -> "You have successfully returned '" + title + "'" + BY + author + ".");
                 }
                 return; // Exit the method after returning.
             }
