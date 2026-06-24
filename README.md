@@ -1,10 +1,10 @@
-# Library Management System 📚
+# Library Management System 
 
 A simple Library Management System developed in Java, allowing users to borrow and return books with ease. The system enables users to interact with a collection of books and view available books, borrow books, and return them. 📖
 
 ## Features ✨
 
-- **Add Books** ➕: Add books to the library collection.
+- **Add Books** ➕: Add books to the library collections.
 - **Display Available Books** 👀: View a list of books that are available to borrow.
 - **Borrow Books** 🎧: Borrow a book if it's available.
 - **Return Books** 🔙: Return a book to the library.
