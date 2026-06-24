@@ -4,7 +4,7 @@ A simple Library Management System developed in Java, allowing users to borrow a
 
 ## Features ✨
 
-- **Add Books** ➕: Add books to the library collection.
+- **Add Books** ➕: Add books to the library collections.
 - **Display Available Books** 👀: View a list of books that are available to borrow.
 - **Borrow Books** 🎧: Borrow a book if it's available.
 - **Return Books** 🔙: Return a book to the library.
