@@ -51,6 +51,12 @@ public class Book {
         return title;
     }
 
+    // Setter method to edit the book's title.
+    public void setTitle(String title) {
+        this.title = title;
+        LOGGER.info(() -> "Book title has been updated to: " + title);
+    }
+
     // Getter method to retrieve the book's author.
     public String getAuthor() {
         return author;
