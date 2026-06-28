@@ -19,6 +19,25 @@ public class LibraryManagementSystem {
         library.addBook(new Book("Verity", "Colleen Hoover"));
         library.addBook(new Book("The Secret", "Rhonda Byrne"));
         library.addBook(new Book("Grit", "Angela Duckworth"));
+        library.addBook(new Book("book1", "Colleen Hoover"));
+        library.addBook(new Book("Dune", "Rhonda Byrne"));
+        library.addBook(new Book("book2", "Angela Duckworth"));
+        library.addBook(new Book("book3", "Colleen Hoover"));
+        library.addBook(new Book("book4", "Rhonda Byrne"));
+        library.addBook(new Book("book5", "Angela Duckworth"));
+        library.addBook(new Book("book1", "Colleen Hoover"));
+        library.addBook(new Book("Dune", "Rhonda Byrne"));
+        library.addBook(new Book("book2", "Angela Duckworth"));
+        library.addBook(new Book("book3", "Colleen Hoover"));
+        library.addBook(new Book("book4", "Rhonda Byrne"));
+        library.addBook(new Book("book5", "Angela Duckworth"));
+        library.addBook(new Book("book1", "Colleen Hoover"));
+        library.addBook(new Book("Dune", "Rhonda Byrne"));
+        library.addBook(new Book("book2", "Angela Duckworth"));
+        library.addBook(new Book("book3", "Colleen Hoover"));
+        library.addBook(new Book("book4", "Rhonda Byrne"));
+        library.addBook(new Book("book5", "Angela Duckworth"));
+
 
         // Infinite loop to keep the system running until the user chooses to exit.
         while(true) {
