@@ -33,7 +33,8 @@ public class Book {
     public void returnBook() {
         // To check if the book is already borrowed.
         if (isBorrowed) {
-            isBorrowed = false;
+            // BUG: status peminjaman tidak direset, buku tetap dianggap dipinjam
+            isBorrowed = true;
             LOGGER.info(() -> "You've successfully returned the book: " + title);
         } else {
             // If the book wasn't borrowed, display a message.
